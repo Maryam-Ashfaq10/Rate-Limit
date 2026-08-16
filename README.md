@@ -11,7 +11,7 @@ Rate limiting is a common problem in backend systems, and there are several clas
 
 ## Algorithms
 
-## 1.Token Bucket
+## 1. Token Bucket
 
 **How it works:**
 1. Each client (e.g. by IP or id) has a "bucket" that holds a maximum number of tokens.

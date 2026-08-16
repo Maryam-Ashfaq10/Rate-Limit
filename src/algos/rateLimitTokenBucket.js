@@ -33,7 +33,7 @@ class TokenBucket {
 // One bucket per client key (IP, API key, etc.)
 const buckets = new Map();
 
-function rateLimiter({ capacity = 5, refillRate = 1 } = {}) {
+function rateLimiterTokenBucket({ capacity = 5, refillRate = 1 } = {}) {
   return (req, res, next) => {
     const key = req.ip; // swap for API key / user id later
 
@@ -60,4 +60,4 @@ function rateLimiter({ capacity = 5, refillRate = 1 } = {}) {
   };
 }
 
-module.exports = rateLimiter;
+module.exports = rateLimiterTokenBucket;
