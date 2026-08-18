@@ -19,3 +19,12 @@ Rate limiting is a common problem in backend systems, and there are several clas
 3. Every incoming request consumes one token.
 4. If the bucket has no tokens left, the request is rejected until it refills.
 
+## 2. Fixed Window
+
+**How it works:**
+1. Time is divided into fixed-size windows (e.g. every 60 seconds).
+2. Each window has a counter that starts at 0.
+3. When a request arrives, the current window is identified based on the timestamp and the counter for that window is incremented by 1.
+4. If the counter exceeds the limit, the request is rejected.
+
+
